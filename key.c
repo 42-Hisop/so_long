@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khee-seo <khee-seo@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/23 18:27:43 by khee-seo          #+#    #+#             */
+/*   Updated: 2021/09/23 20:07:21 by khee-seo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	move_forward(t_info *info, char **map)
 {	
 	if (map[info->player_y - 1][info->player_x] == '1')
 		return ;
-	if (map[info->player_y - 1][info->player_x] == 'E' 
+	if (map[info->player_y - 1][info->player_x] == 'E'
 			&& info->collect != info->collectcount)
-		return;
+		return ;
 	info->movecount++;
 	printf("%d\n", info->movecount);
 	if (map[info->player_y - 1][info->player_x] == 'C')
@@ -26,9 +38,9 @@ void	move_backward(t_info *info, char **map)
 {
 	if (map[info->player_y + 1][info->player_x] == '1')
 		return ;
-	if (map[info->player_y + 1][info->player_x] == 'E' 
+	if (map[info->player_y + 1][info->player_x] == 'E'
 			&& info->collect != info->collectcount)
-		return;
+		return ;
 	info->movecount++;
 	printf("%d\n", info->movecount);
 	if (map[info->player_y + 1][info->player_x] == 'C')
@@ -48,9 +60,9 @@ void	move_left(t_info *info, char **map)
 {
 	if (map[info->player_y][info->player_x - 1] == '1')
 		return ;
-	if (map[info->player_y][info->player_x - 1] == 'E' 
+	if (map[info->player_y][info->player_x - 1] == 'E'
 			&& info->collect != info->collectcount)
-		return;
+		return ;
 	info->movecount++;
 	printf("%d\n", info->movecount);
 	if (map[info->player_y][info->player_x - 1] == 'C')
@@ -70,9 +82,9 @@ void	move_right(t_info *info, char **map)
 {
 	if (map[info->player_y][info->player_x + 1] == '1')
 		return ;
-	if (map[info->player_y][info->player_x + 1] == 'E' 
+	if (map[info->player_y][info->player_x + 1] == 'E'
 			&& info->collect != info->collectcount)
-		return;
+		return ;
 	info->movecount++;
 	printf("%d\n", info->movecount);
 	if (map[info->player_y][info->player_x + 1] == 'C')
@@ -88,7 +100,7 @@ void	move_right(t_info *info, char **map)
 	info->player_x++;
 }
 
-int		key_press(int key, t_info *info)
+int	key_press(int key, t_info *info)
 {
 	if (key == 13)
 		move_forward(info, info->map);

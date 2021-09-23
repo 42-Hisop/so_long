@@ -1,4 +1,4 @@
-CC= arch -x86_64 gcc
+CC= arch -x86_64 gcc -Wall -Wextra -Werror
 MLX= -L . -lmlx -framework OpenGL -framework Appkit
 SRCS= main.c \
 	  split_line.c \
@@ -6,7 +6,8 @@ SRCS= main.c \
 	  map_valid.c \
 	  map_square.c \
 	  draw.c \
-	  key.c
+	  key.c \
+	  check_valid.c
 
 OBJS= $(SRCS:.c=.o)
 NAME= so_long

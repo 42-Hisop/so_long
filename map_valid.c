@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_valid.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khee-seo <khee-seo@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/23 18:29:36 by khee-seo          #+#    #+#             */
+/*   Updated: 2021/09/23 20:00:02 by khee-seo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-int		validinwall(char c)
+int	validinwall(char c)
 {
 	if (c == '0' || c == 'C' || c == 'E' || c == 'P')
 		return (1);
 	return (0);
 }
 
-int		wallcheck_w(char **map)
+int	wallcheck_w(char **map)
 {
-	int		i;
-	int		j;
-	int		flag;
+	int	i;
+	int	j;
+	int	flag;
 
 	i = 0;
 	while (map[i])
@@ -33,7 +45,7 @@ int		wallcheck_w(char **map)
 	return (0);
 }
 
-int		wallcheck_h(char **map)
+int	wallcheck_h(char **map)
 {
 	int		i;
 	int		j;
@@ -60,7 +72,7 @@ int		wallcheck_h(char **map)
 	return (0);
 }
 
-int		validcheck(t_info *info, char **map)
+int	validcheck(t_info *info, char **map)
 {
 	int		i;
 	int		j;
@@ -89,7 +101,7 @@ int		validcheck(t_info *info, char **map)
 void	map_valid(char **map, t_info *info)
 {
 	check_square(info, map, 0, 0);
-	if (validcheck(info,map))
+	if (validcheck(info, map))
 		error("map error_unvalid");
 	if (wallcheck_w(map))
 		error("map error_w");
@@ -99,5 +111,6 @@ void	map_valid(char **map, t_info *info)
 		error("collect count zero");
 	if (check_exit(map) == 0)
 		error("exit count zero");
-	return ;
+	if (check_player(map) != 1)
+		error("player not 1");
 }

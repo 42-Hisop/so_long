@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split_line.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khee-seo <khee-seo@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/23 18:22:20 by khee-seo          #+#    #+#             */
+/*   Updated: 2021/09/23 20:02:32 by khee-seo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-char		*check_m(char *rd, int rd_i, char *backup, char c)
+char	*check_m(char *rd, int rd_i, char *backup, char c)
 {
 	int		count;
 
@@ -11,20 +23,19 @@ char		*check_m(char *rd, int rd_i, char *backup, char c)
 		count++;
 	}
 	backup = (char *)malloc(sizeof(char) * count + 1);
-	if (!(backup))	
+	if (!(backup))
 		error("split malloc error");
 	return (backup);
 }
 
-char		*ft_strjoin(char *s1, char *s2, int i, int j)
+char	*ft_strjoin(char *s1, char *s2, int i, int j)
 {
-	int		len;
 	char	*new;
 
 	if (s1 == 0 || s2 == 0)
 		return (0);
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) +
-			ft_strlen(s2) + 1));
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s1)
+				+ ft_strlen(s2) + 1));
 	if (!(new))
 		error("strjoin malloc error");
 	while (s1[i])
@@ -42,7 +53,7 @@ char		*ft_strjoin(char *s1, char *s2, int i, int j)
 	return (new);
 }
 
-char		**ft_split(char *rd, int i, int rd_i)
+char	**ft_split(char *rd, int i, int rd_i)
 {
 	int		j;
 	char	**backup;
@@ -70,7 +81,7 @@ char		**ft_split(char *rd, int i, int rd_i)
 	return (backup);
 }
 
-char		*save(char *rd, char *buf)
+char	*save(char *rd, char *buf)
 {
 	char	*temp;
 
@@ -85,12 +96,11 @@ char		*save(char *rd, char *buf)
 	return (rd);
 }
 
-char		**split_line(int fd)
+char	**split_line(int fd)
 {
 	char	buf[2];
 	char	*rd;
 	char	**backup;
-	int		index;
 
 	rd = NULL;
 	while (1)

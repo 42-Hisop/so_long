@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khee-seo <khee-seo@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/23 18:28:54 by khee-seo          #+#    #+#             */
+/*   Updated: 2021/09/23 19:57:19 by khee-seo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-int		destroy_notify(t_info *info)
+int	destroy_notify(void)
 {
 	exit(0);
-	return(0);
+	return (0);
 }
 
 void	tex_init(t_info *info, t_texture *tex, int i)
@@ -34,7 +46,7 @@ char	*map_name(int argc, char **argv)
 {
 	int		i;
 	char	*new;
-	
+
 	if (argc != 2)
 		error("argc not 2");
 	new = ft_strdup(argv[1]);

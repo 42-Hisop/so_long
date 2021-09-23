@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khee-seo <khee-seo@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/23 18:24:44 by khee-seo          #+#    #+#             */
+/*   Updated: 2021/09/23 20:05:05 by khee-seo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	*error(char *str)
@@ -14,7 +26,7 @@ void	*error(char *str)
 	exit(1);
 }
 
-int			ft_strlen(char const *s)
+int	ft_strlen(char const *s)
 {
 	int		len;
 
@@ -24,7 +36,7 @@ int			ft_strlen(char const *s)
 	return (len);
 }
 
-char		*ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	char	*cpy;
 	int		i;
@@ -45,7 +57,7 @@ char		*ft_strdup(char *src)
 	return (cpy);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int		i;
 
@@ -59,7 +71,7 @@ int		ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int			ft_strstr(char *rd, char c)
+int	ft_strstr(char *rd, char c)
 {
 	int		i;
 	int		count;
